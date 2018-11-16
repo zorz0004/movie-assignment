@@ -10,6 +10,10 @@ function init(){
     console.log(APIKEY);
     addEventListeners();
     getDataFromLocalStorage();
+    
+    document.getElementById("back-button").src = "./img/back.png";
+    
+    document.getElementById("search-button").src = "./img/search.png";
 }
 
 function addEventListeners(){
