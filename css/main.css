@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
+@import url('https://fonts.googleapis.com/css?family=Amiko');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
 html{
     background-color: gainsboro;
 }
 
 body{
     text-align: center;
+    font-family: 'Amiko', 'Avenir', 'Calibri', sans-serif;
 }
 
 main{
     padding: 2rem;
     margin-top: 1rem;
+    margin: 1rem;
     background-image: linear-gradient(to bottom right, lightgray, darkgray);
     border-radius: 15px;
     box-shadow: 5px 10px grey;
@@ -16,28 +26,224 @@ main{
 
 header{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
 }
 
-#search-button{
-    width: 20px;
-    height: auto;
-    grid-column-start: 3;
+#back-button,
+#search-button,
+#modalBtn{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+/*    grid-column-start: 3;*/
 }
 
 #back-button{
-    width: 20px;
+    width: 2rem;
     height: auto;
+    grid-column-start: 1;
+}
+
+#search-button{
+    grid-column-start: 4;
+}
+
+#modalBtn{
+    grid-column-start: 3;
+    grid-row-end: 1;
+}
+
+.input{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    align-content: space-around;
 }
 
 #search-input{
-    grid-column-start: 2;
-    grid-row-start: 1;
-    font-size: 1rem;
+    font-size: 2rem;
     width: 400px;
 }
 
+#search-input:hover{
+    width: 90%;
+    transform: perspective(90%);
+}
+
+.iconic-property-stroke,
+.iconic-property-fill {
+    fill: #345;
+    stroke: #269;
+}
+
 #back-button:hover,
-#search-button:hover{
-    background-color: ghostwhite;
+#search-button:hover,
+#modalBtn:hover{
+    background-color: darkgray;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+header,
+main,
+footer {
+    flex-shrink: 0;
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+}
+
+#creditImage{
+    width: 100px;
+    height: auto;
+}
+
+.page{
+    display: none;
+}
+
+/* Font for movie tittles */
+h1,
+h2,
+h3{
+    font-family: 'Goudy Bookletter 1911', 'Kefa', 'Georgia', serif;
+}
+
+h1{
+    display: block;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: -2;
+    text-shadow: 5px 5px lightgrey;
+}
+
+
+#search-results>.title{
+    margin: 2rem;
+}
+
+/*Modal window*/
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+}
+.hide {
+    display: none;
+}
+.off{
+    transform: translateY(-400%);
+}
+.on{
+    transform: translateY(30%);
+}
+
+.modal {
+    position: fixed;
+    width: 500px;
+    height: 280px;
+    z-index: 200;   
+    top: calc((100% - 280px)/2);
+    left: calc((100% - 500px)/2);
+    font-family: 'Amiko', 'Avenir', 'Calibri', sans-serif;
+    line-height: 1.5;
+    color: #555;
+    background-color: #eee;
+}
+
+.cancelButton,
+.saveButton{
+    width: 120px;
+    position: absolute;
+    border: none;
+    background-color: lightgray;
+    color: black;
+    cursor: pointer;
+    padding: 0.25rem 2rem;
+    font-size: 1rem;
+}
+
+.saveButton{
+    bottom: 1rem;
+    right: 4rem;
+    font-weight: bolder;
+}
+
+.cancelButton{
+    bottom: 1rem;
+    left: 4rem;
+    font-weight: bolder;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color:dimgrey;
+    color: white;
+    text-align: center;
+}
+
+.modal-radio{
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.modal-radio:hover{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/*Movie cards */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.movieCard {
+    width: 50rem;
+    height: auto;
+    margin: 1rem auto;
+/*
+    background-color: cornflowerblue;
+    color: white;
+*/
+    background-image: linear-gradient(to  top right, lightgray, darkgray);
+/*    border-radius: 15px;*/
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+.movieCard:hover{
+    width: 55rem; 
+    font-weight: bolder;
+}
+
+.imageSection {
+    float: left;
+    width: 12rem;
+    height: 17rem;
+    margin-right: 1rem
+    overflow: hidden;
+}
+
+/*select only the images that are direct descendants of .imageSection*/
+.imageSection > img {
+    height: 17rem;
+    margin-right: 1rem;
 }
