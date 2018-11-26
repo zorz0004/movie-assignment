@@ -15,7 +15,7 @@ function init() {
     // console.log(APIKEY);
     addEventListeners();
     getDataFromLocalStorage();
-    
+
     //default
     localStorage.setItem('choiceType', "movie");
 
@@ -57,6 +57,14 @@ function init() {
             document.querySelector(".Home").classList.add("hide");
             document.querySelector(".HomeTV").classList.remove("hide");
 
+            let sec1 = document.createElement("section");
+            sec1.classList.add("title");
+            let sec2 = document.createElement("section");
+            sec2.classList.add("content");
+            sec2.classList.add("flex-container");
+            document.querySelector("#search-results").appendChild(sec1);
+            document.querySelector("#search-results").appendChild(sec2);
+
         } else if (choiceType == "movie") {
             document.getElementById("search-input").value = "";
             searchString = "";
@@ -70,6 +78,14 @@ function init() {
             //mainTitle();
             document.querySelector(".HomeTV").classList.add("hide");
             document.querySelector(".Home").classList.remove("hide");
+
+            let sec1 = document.createElement("section");
+            sec1.classList.add("title");
+            let sec2 = document.createElement("section");
+            sec2.classList.add("content");
+            sec2.classList.add("flex-container");
+            document.querySelector("#search-results").appendChild(sec1);
+            document.querySelector("#search-results").appendChild(sec2);
         }
 
     });
@@ -267,12 +283,12 @@ function createPage(data) {
     let title = document.querySelector("#search-results>.title");
 
     let message = document.createElement("h2");
-//    if (content.innerHTML != null) {
-//        content.innerHTML = "";
-//    }
-//    if (title.innerHTML != null) {  
-//        title.innerHTML = "";
-//    }
+    //    if (content.innerHTML != null) {
+    //        content.innerHTML = "";
+    //    }
+    //    if (title.innerHTML != null) {  
+    //        title.innerHTML = "";
+    //    }
     content.innerHTML = "";
     title.innerHTML = "";
 
