@@ -24,8 +24,6 @@ main {
     box-shadow: 5px 10px grey;
 }
 
-
-
 .iconic-property-stroke,
 .iconic-property-fill {
     fill: #345;
@@ -277,6 +275,10 @@ img {
     .imageSection > img {
         margin-left: 4rem;
     }
+    
+    #search-input:hover {
+        background-color: aliceblue;
+    }
 }
 
 @media (min-width: 752px) {
@@ -321,10 +323,6 @@ img {
         width: 600px;
     }
 
-    #search-input:hover {
-        background-color: aliceblue;
-    }
-
     h1 {
         display: block;
         text-align: center;
@@ -340,6 +338,10 @@ img {
         text-align: justify;
         padding: 2rem;
         margin-left: 11rem;
+    }
+    
+    #search-input:hover {
+        background-color: aliceblue;
     }
 }
 

@@ -269,7 +269,7 @@ let zorz0004 = (function () {
         url = url + `search/${localStorage.getItem("choiceType")}?api_key=${APIKEY}&query=${searchString}`;
 
         //let url = `${movieDatabaseURL}search/movie?api_key=${APIKEY}&query=${searchString}`;
-
+       
         fetch(url)
             .then((response) => response.json())
             .then(function (data) {
