@@ -257,6 +257,16 @@ img {
      #search-input {
          font-size: 1rem;
     }
+    
+    h3,
+    p{
+        clear: left;
+        padding-top: 1rem;
+    }
+    
+    .imageSection > img {
+        margin-left: 4rem;
+    }
 }
 
 @media (min-width: 786px) {
