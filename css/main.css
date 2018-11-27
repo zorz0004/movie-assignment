@@ -221,7 +221,7 @@ img {
 
 
 
-@media(max-width: 786px) {
+@media(max-width: 752px) {
     header {
         display: grid;
         grid-template-areas:
@@ -269,7 +269,7 @@ img {
     }
 }
 
-@media (min-width: 786px) {
+@media (min-width: 752px) {
     header {
         display: grid;
         grid-template-columns: auto auto auto auto;
