@@ -221,7 +221,7 @@ img {
 
 
 
-@media(max-width: 752px) {
+@media(min-width:403px) and (max-width: 752px) {
     header {
         display: grid;
         grid-template-areas:
@@ -237,6 +237,7 @@ img {
 
     .input {
         grid-area: main;
+        display: flex;
     }
 
     #back-button{

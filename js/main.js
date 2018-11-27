@@ -20,6 +20,8 @@ function init() {
     localStorage.setItem('choiceType', "movie");
 
     mainTitle();
+    
+    //document.querySelector(".backButtonDiv").classList.add("hide");
 
 
     //MODAL
