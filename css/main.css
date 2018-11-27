@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
 @import url('https://fonts.googleapis.com/css?family=Amiko');
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-html{
+html {
     background-color: gainsboro;
 }
 
-body{
+body {
     text-align: center;
     font-family: 'Amiko', 'Avenir', 'Calibri', sans-serif;
 }
 
-main{
+main {
     padding: 2rem;
     margin-top: 1rem;
     margin: 1rem;
@@ -24,52 +24,7 @@ main{
     box-shadow: 5px 10px grey;
 }
 
-header{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
 
-#back-button,
-#search-button,
-#modalBtn{
-    height: 2rem;
-    width: 2rem;
-    cursor: pointer;
-/*    grid-column-start: 3;*/
-}
-
-#back-button{
-    width: 2rem;
-    height: auto;
-    grid-column-start: 1;
-}
-
-#search-button{
-    grid-column-start: 4;
-}
-
-#modalBtn{
-    grid-column-start: 3;
-    grid-row-end: 1;
-}
-
-.input{
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    display: flex;
-    align-content: space-around;
-}
-
-#search-input{
-    font-size: 2rem;
-    width: 400px;
-}
-
-#search-input:hover{
-    width: 90%;
-    transform: perspective(90%);
-}
 
 .iconic-property-stroke,
 .iconic-property-fill {
@@ -79,7 +34,7 @@ header{
 
 #back-button:hover,
 #search-button:hover,
-#modalBtn:hover{
+#modalBtn:hover {
     background-color: darkgray;
 }
 
@@ -99,68 +54,61 @@ footer {
     text-align: center;
 }
 
-#creditImage{
+#creditImage {
     width: 100px;
     height: auto;
 }
 
-.page{
+.page {
     display: none;
 }
 
 /* Font for movie tittles */
 h1,
 h2,
-h3{
+h3 {
     font-family: 'Goudy Bookletter 1911', 'Kefa', 'Georgia', serif;
 }
 
-h1{
-    display: block;
-    text-align: center;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: -2;
-    text-shadow: 5px 5px lightgrey;
-}
 
-
-#search-results>.title{
+#search-results > .title {
     margin: 2rem;
 }
 
 /*Modal window*/
-.overlay{
+.overlay {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
 
-.show{
+.show {
     display: block;
 }
+
 .hide {
     display: none;
 }
-.off{
+
+.off {
     transform: translateY(-400%);
 }
-.on{
+
+.on {
     transform: translateY(30%);
+    transition: transform 0.5s ease-in 0s, opacity 0.8s ease-in .5s;
 }
 
 .modal {
     position: fixed;
     width: 500px;
     height: 280px;
-    z-index: 200;   
+    z-index: 200;
     top: calc((100% - 280px)/2);
     left: calc((100% - 500px)/2);
     font-family: 'Amiko', 'Avenir', 'Calibri', sans-serif;
@@ -170,7 +118,7 @@ h1{
 }
 
 .cancelButton,
-.saveButton{
+.saveButton {
     width: 120px;
     position: absolute;
     border: none;
@@ -181,33 +129,59 @@ h1{
     font-size: 1rem;
 }
 
-.saveButton{
+.saveButton {
     bottom: 1rem;
     right: 4rem;
     font-weight: bolder;
 }
 
-.cancelButton{
+.saveButton:hover {
+    border: 1px solid grey;
+}
+
+.cancelButton {
     bottom: 1rem;
     left: 4rem;
     font-weight: bolder;
 }
 
+.cancelButton:hover {
+    border: 1px solid grey;
+}
+
 .modal-header {
     padding: 2px 16px;
-    background-color:dimgrey;
+    background-color: dimgrey;
     color: white;
     text-align: center;
 }
 
-.modal-radio{
+.modal-radio {
     text-align: center;
     margin-top: 4rem;
 }
 
-.modal-radio:hover{
-    font-size: 1.5rem;
+.modal-radio > label {
+    margin-right: 2rem;
+}
+
+.modal-radio:hover {
+    border: 1px solid grey;
+    border-radius: 25px;
     font-weight: 800;
+}
+
+.overview {
+    text-align: justify;
+    padding: 2rem;
+    margin-left: 11rem;
+}
+
+.imageNF {
+    width: 181px;
+    height: auto;
+    border: 1px solid grey;
+    border-radius: 25px;
 }
 
 /*Movie cards */
@@ -220,30 +194,135 @@ h1{
     width: 50rem;
     height: auto;
     margin: 1rem auto;
-/*
-    background-color: cornflowerblue;
-    color: white;
-*/
-    background-image: linear-gradient(to  top right, lightgray, darkgray);
-/*    border-radius: 15px;*/
-    box-shadow: 5px 5px 5px 5px grey;
+    background-image: linear-gradient(to top right, aliceblue, darkgray);
+
+    border-radius: 15px;
+    box-shadow: 1px 2px 1px 2px grey;
+    text-align: center;
 }
 
-.movieCard:hover{
-    width: 55rem; 
+img {
+    border-radius: 15px;
+}
+
+.movieCard:hover {
+    width: 60rem;
     font-weight: bolder;
+    font-size: 1.07rem;
+    background-image: linear-gradient(to top right, lightgray, white);
 }
 
 .imageSection {
     float: left;
     width: 12rem;
     height: 17rem;
-    margin-right: 1rem
-    overflow: hidden;
+    margin-right: 1rem overflow: hidden;
 }
 
 /*select only the images that are direct descendants of .imageSection*/
 .imageSection > img {
     height: 17rem;
     margin-right: 1rem;
+}
+
+
+
+@media(max-width: 786px) {
+    header {
+        display: grid;
+        grid-template-areas:
+            'header header header header header header'
+            'back main main main right right2';
+        grid-gap: 1rem;
+        padding: 0px;
+    }
+
+    .input {
+        grid-area: main;
+    }
+
+    #back-button{
+        grid-area: back;
+    }
+    
+    #modalBtn{
+        grid-area: right2;
+    }
+    #search-button {
+        grid-area: right;
+    }
+    
+    h1{
+        grid-area: header;
+    }
+    
+     #search-input {
+         font-size: 1rem;
+    }
+}
+
+@media (min-width: 786px) {
+    header {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    #back-button,
+    #search-button,
+    #modalBtn {
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer;
+    }
+
+    #back-button {
+        width: 2rem;
+        height: auto;
+        grid-column-start: 1;
+    }
+
+    #search-button {
+        grid-column-start: 4;
+    }
+
+    #modalBtn {
+        grid-column-start: 3;
+        grid-row-end: 1;
+    }
+
+    .input {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        display: flex;
+        align-content: space-around;
+    }
+
+    #search-input {
+        font-size: 2rem;
+        width: 600px;
+    }
+
+    #search-input:hover {
+        background-color: aliceblue;
+    }
+
+    h1 {
+        display: block;
+        text-align: center;
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: -2;
+        text-shadow: 5px 5px lightgrey;
+    }
+}
+
+
+@media (min-width: 1100px) {
+     #search-input {
+        font-size: 2rem;
+        width: 900px;
+    }
 }

@@ -326,6 +326,8 @@ function createMovieCards(results) {
         let videoRating = document.createElement("p");
         let videoOverview = document.createElement("p");
 
+        videoOverview.classList.add("overview");
+
         // set up the content
         videoTitle.textContent = movie.title;
         videoDate.textContent = movie.release_date;
@@ -334,7 +336,12 @@ function createMovieCards(results) {
 
         // set up image source URL
         //image.src = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
-        image.src = `${imageURL}${imageSizes[2]}${movie.poster_path}`;
+        if (movie.poster_path != null) {
+            image.src = `${imageURL}${imageSizes[2]}${movie.poster_path}`;
+        } else {
+            image.src = `./img/the-movie-db.svg`;
+            image.classList.add("imageNF");
+        }
         image.alt = `movie image`;
 
         // set up movie data attributes
